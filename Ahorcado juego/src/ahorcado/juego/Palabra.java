@@ -14,6 +14,8 @@ public class Palabra {
     public String definicion;
     public boolean []status;
     
+    public Palabra(){}
+    
     public Palabra(String word, String Def){
         this.palabra=word;
         this.definicion=Def;
