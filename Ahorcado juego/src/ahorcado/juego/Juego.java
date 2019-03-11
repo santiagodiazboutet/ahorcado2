@@ -43,6 +43,8 @@ public class Juego extends javax.swing.JDialog {
         jButton1 = new javax.swing.JButton();
         jScrollPane1 = new javax.swing.JScrollPane();
         areaPalabra = new javax.swing.JTextPane();
+        jScrollPane2 = new javax.swing.JScrollPane();
+        letrasError = new javax.swing.JTextArea();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
 
@@ -69,12 +71,23 @@ public class Juego extends javax.swing.JDialog {
         areaPalabra.setForeground(new java.awt.Color(0, 0, 0));
         jScrollPane1.setViewportView(areaPalabra);
 
+        letrasError.setEditable(false);
+        letrasError.setBackground(new java.awt.Color(204, 255, 255));
+        letrasError.setColumns(20);
+        letrasError.setFont(new java.awt.Font("Tahoma", 0, 36)); // NOI18N
+        letrasError.setForeground(new java.awt.Color(0, 0, 0));
+        letrasError.setLineWrap(true);
+        letrasError.setRows(1);
+        letrasError.setText("Letras erradas:");
+        letrasError.setBorder(null);
+        jScrollPane2.setViewportView(letrasError);
+
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                .addContainerGap()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 607, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
                 .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 287, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -84,7 +97,10 @@ public class Juego extends javax.swing.JDialog {
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jButton1)
                     .addComponent(Seleccionada, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap(740, Short.MAX_VALUE))
+            .addGroup(jPanel1Layout.createSequentialGroup()
+                .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 0, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -97,7 +113,9 @@ public class Juego extends javax.swing.JDialog {
                 .addComponent(Seleccionada, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(42, 42, 42)
                 .addComponent(jButton1)
-                .addContainerGap(118, Short.MAX_VALUE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 142, Short.MAX_VALUE)
+                .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap())
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -131,6 +149,7 @@ public class Juego extends javax.swing.JDialog {
         }else{
             Seleccionada.removeItemAt(Seleccionada.getSelectedIndex());
             //   Seleccionada.remove(Seleccionada.getSelectedIndex());
+            this.showArea();
         }
 
     }//GEN-LAST:event_jButton1ActionPerformed
@@ -161,11 +180,34 @@ public class Juego extends javax.swing.JDialog {
             }
             a.append(" ");
             areaPalabra.setText(a.toString());
-            
+        }
+        if(this.palabra.fallos!="0"){  
+           
+            if(this.palabra.fallos.length()==1){
+            letrasError.append(" "+this.palabra.fallos);   
+            }    
+            else if(this.palabra.fallos.length()<=5){
+                
+                for (int i = 0; i < this.palabra.fallos.length(); i++) {
+                    
+                    if(i==0){
+                        letrasError.setText("Letras erradas: ");
+                        letrasError.append(Character.toString(this.palabra.fallos.charAt(i)));
+                        continue;
+
+                    }
+                    letrasError.append(",");
+                    letrasError.append(Character.toString(this.palabra.fallos.charAt(i)));
+                   
+                } 
+                
+            }
+
         }
     }
     public void getPalabra(){
         this.palabra=Diccionario.getRandomPalabra(this.Dificultad);
+        this.palabra.fallos="0";
         System.out.println(this.palabra.palabra);
     }  
     
@@ -225,5 +267,7 @@ public class Juego extends javax.swing.JDialog {
     private javax.swing.JLabel jLabel1;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JScrollPane jScrollPane2;
+    private javax.swing.JTextArea letrasError;
     // End of variables declaration//GEN-END:variables
 }

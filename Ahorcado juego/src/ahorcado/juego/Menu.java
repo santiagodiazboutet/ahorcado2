@@ -135,13 +135,14 @@ public class Menu extends javax.swing.JFrame {
        {
           this.juego = new Juego(this, true,"Media");
           this.juego.getPalabra();
+          this.juego.showArea();
           this.juego.setVisible(true);
        }
        else
        {
           this.juego = new Juego(this, true,"Dificil");
           this.juego.getPalabra();
-         
+         this.juego.showArea();
           this.juego.setVisible(true);
           
        }
