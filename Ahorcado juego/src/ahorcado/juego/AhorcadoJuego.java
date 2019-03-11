@@ -16,7 +16,7 @@ public class AhorcadoJuego {
      */
     public static void main(String[] args) {
         // TODO code application logic here
-        Jugador a=new Jugador("Yo");
+       /* Jugador a=new Jugador("Yo");
         Palabra b=new Palabra("b","Perry el ...");
         Palabra c=new Palabra("c","Perry el ...");
         Palabra d=new Palabra("d","Perry el ...");
@@ -36,7 +36,18 @@ public class AhorcadoJuego {
         }
         LogicaJuego.play(a, b);
         
-        
+        */
+      
+      
+       
+       
+       Menu.main(args);
+       
+       
+       
+       
+       
+       
     }
     
 }

@@ -37,6 +37,13 @@ public class Diccionario {
     public String GetDificultad(){
         return this._Dificultad;
     }
+    
+    public static Palabra getRandomPalabra(String dificultad){
+        Diccionario a = Diccionario.deserializarPalabras(dificultad);
+
+        return a.Palabras.get((int) Math.floor(Math.random() * a.Palabras.size()));
+    }
+
     public static void serializarPalabras(Diccionario lista) {
         XMLEncoder encoder = null;
         String ruta=lista.GetDificultad()+"Dicc.xml";

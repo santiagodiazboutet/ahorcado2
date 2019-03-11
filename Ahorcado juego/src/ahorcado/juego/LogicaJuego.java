@@ -20,7 +20,7 @@ public class LogicaJuego {
         jugador.Vidas=sc.nextInt();
         while(true){
             jugador.Intentos++;
-            if(!LogicaJuego.jugada(palabra)){
+          /*  if(!LogicaJuego.jugada(palabra)){
                 jugador.Fallos++;
                 jugador.Vidas--;
             }
@@ -34,28 +34,26 @@ public class LogicaJuego {
             if(LogicaJuego.determinarGanador(palabra)){
                 System.out.println("GANO");
                 break;
-            }
+            }*/
         }          
     }
     
-    public static boolean jugada(Palabra a){
+    public static boolean jugada(Palabra a, char letra){
         Scanner sc = new Scanner(System.in);
-        char aux;
-        char aux2;
-        int i=0;
         boolean resultado=false;
-        System.out.println("Ingrese la letra a adivinar.");
-        aux=sc.nextLine().charAt(0);
-        System.out.println(a.status.length);
-        for (boolean statu : a.status) {
-            aux2=a.palabra.charAt(i);
-            if(aux2==aux){
+       
+       
+        a.palabra=a.palabra.toUpperCase();
+        for (int i=0;a.status.length>i;i++) {
+         
+            if(a.palabra.charAt(i)==letra){
                 
                 a.status[i]=true;
                 resultado=true;
                
             }
-            i++;
+          
+          
         }
             
       
