@@ -13,14 +13,14 @@ public class Palabra {
     public String palabra;
     public String definicion;
     public boolean []status;
-    
+    public String fallos; 
     public Palabra(){}
     
     public Palabra(String word, String Def){
         this.palabra=word;
         this.definicion=Def;
         this.status=new boolean[(palabra.length())];
-
+        this.fallos="124";
     }
     
     

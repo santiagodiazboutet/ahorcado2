@@ -11,7 +11,7 @@ import java.util.Scanner;
  */
 public class LogicaJuego {
     
-    
+    /*
     
     public static void play(Jugador jugador, Palabra palabra){
         Scanner sc = new Scanner(System.in);
@@ -20,7 +20,7 @@ public class LogicaJuego {
         jugador.Vidas=sc.nextInt();
         while(true){
             jugador.Intentos++;
-          /*  if(!LogicaJuego.jugada(palabra)){
+            if(!LogicaJuego.jugada(palabra)){
                 jugador.Fallos++;
                 jugador.Vidas--;
             }
@@ -34,9 +34,9 @@ public class LogicaJuego {
             if(LogicaJuego.determinarGanador(palabra)){
                 System.out.println("GANO");
                 break;
-            }*/
+            }
         }          
-    }
+    */
     
     public static boolean jugada(Palabra a, char letra){
         Scanner sc = new Scanner(System.in);
@@ -55,7 +55,21 @@ public class LogicaJuego {
           
           
         }
+        if(resultado==false){
+            if(a.fallos=="0"){
+                a.fallos=Character.toString(letra);
+                System.out.println(a.fallos);
+            }
+            else{
+                a.fallos+=Character.toString(letra);
+                System.out.println(a.fallos);
+            }
             
+         
+                    
+            
+            
+        }
       
         return resultado;
     }

@@ -121,12 +121,15 @@ public class Juego extends javax.swing.JDialog {
         // TODO add your handling code here:
         System.out.println(Seleccionada.getSelectedIndex());
         if(LogicaJuego.jugada(this.palabra, Seleccionada.getSelectedItem().toString().charAt(0)))
-        {
+        {   
+            
+            Seleccionada.removeItemAt(Seleccionada.getSelectedIndex());
             this.showArea();
-
+            
             //  Seleccionada.remove(Seleccionada.getSelectedIndex());
 
         }else{
+            Seleccionada.removeItemAt(Seleccionada.getSelectedIndex());
             //   Seleccionada.remove(Seleccionada.getSelectedIndex());
         }
 
