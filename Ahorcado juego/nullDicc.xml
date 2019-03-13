@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<java version="1.8.0_111" class="java.beans.XMLDecoder">
+ <object class="ahorcado.juego.Diccionario" id="Diccionario0"/>
+<void class="ahorcado.juego.Palabra" method="getField">
+ <string>palabra</string>
+ <void method="set">
+  <object class="ahorcado.juego.Palabra" id="Palabra0">
+   <void class="ahorcado.juego.Palabra" method="getField">
+    <string>definicion</string>
+    <void method="set">
+     <object idref="Palabra0"/>
+     <string>Perry el ...</string>
+    </void>
+   </void>
+   <void class="ahorcado.juego.Palabra" method="getField">
+    <string>status</string>
+    <void method="set">
+     <object idref="Palabra0"/>
+     <array class="boolean" length="2"/>
+    </void>
+   </void>
+  </object>
+  <string>Ah</string>
+ </void>
+</void>
+<void class="ahorcado.juego.Palabra" method="getField">
+ <string>palabra</string>
+ <void method="set">
+  <object class="ahorcado.juego.Palabra" id="Palabra1">
+   <void class="ahorcado.juego.Palabra" method="getField">
+    <string>definicion</string>
+    <void method="set">
+     <object idref="Palabra1"/>
+     <string>Perry el ...</string>
+    </void>
+   </void>
+   <void class="ahorcado.juego.Palabra" method="getField">
+    <string>status</string>
+    <void method="set">
+     <object idref="Palabra1"/>
+     <array class="boolean" length="5"/>
+    </void>
+   </void>
+  </object>
+  <string>Ahori</string>
+ </void>
+</void>
+<void class="ahorcado.juego.Diccionario" id="Field0" method="getField">
+ <string>Palabras</string>
+ <void id="ArrayList0" method="get">
+  <object idref="Diccionario0"/>
+  <void method="add">
+   <object class="ahorcado.juego.Palabra" id="Palabra2">
+    <void class="ahorcado.juego.Palabra" method="getField">
+     <string>palabra</string>
+     <void method="set">
+      <object idref="Palabra2"/>
+      <string>Ahoru</string>
+     </void>
+    </void>
+    <void class="ahorcado.juego.Palabra" method="getField">
+     <string>definicion</string>
+     <void method="set">
+      <object idref="Palabra2"/>
+      <string>Perry el ...</string>
+     </void>
+    </void>
+    <void class="ahorcado.juego.Palabra" method="getField">
+     <string>status</string>
+     <void method="set">
+      <object idref="Palabra2"/>
+      <array class="boolean" length="5"/>
+     </void>
+    </void>
+   </object>
+  </void>
+  <void method="add">
+   <object idref="Palabra0"/>
+  </void>
+  <void method="add">
+   <object class="ahorcado.juego.Palabra" id="Palabra3">
+    <void class="ahorcado.juego.Palabra" method="getField">
+     <string>palabra</string>
+     <void method="set">
+      <object idref="Palabra3"/>
+      <string>Ahore</string>
+     </void>
+    </void>
+    <void class="ahorcado.juego.Palabra" method="getField">
+     <string>definicion</string>
+     <void method="set">
+      <object idref="Palabra3"/>
+      <string>Perry el ...</string>
+     </void>
+    </void>
+    <void class="ahorcado.juego.Palabra" method="getField">
+     <string>status</string>
+     <void method="set">
+      <object idref="Palabra3"/>
+      <array class="boolean" length="5"/>
+     </void>
+    </void>
+   </object>
+  </void>
+  <void method="add">
+   <object idref="Palabra1"/>
+  </void>
+ </void>
+</void>
+<void idref="ArrayList0"/>
+</java>

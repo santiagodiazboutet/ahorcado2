@@ -5,11 +5,14 @@
  */
 package ahorcado.juego;
 
+import com.sun.glass.events.KeyEvent;
+import javax.swing.JOptionPane;
+
 /**
  *
  * @author S
  */
-public class Juego extends javax.swing.JDialog {
+public final class Juego extends javax.swing.JDialog {
 
     /**
      * Creates new form Juego
@@ -53,6 +56,11 @@ public class Juego extends javax.swing.JDialog {
         jLabel1.setText("jLabel1");
 
         Seleccionada.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z" }));
+        Seleccionada.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyPressed(java.awt.event.KeyEvent evt) {
+                SeleccionadaKeyPressed(evt);
+            }
+        });
 
         jButton1.setText("Jugar");
         jButton1.addActionListener(new java.awt.event.ActionListener() {
@@ -137,22 +145,18 @@ public class Juego extends javax.swing.JDialog {
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         // TODO add your handling code here:
-        System.out.println(Seleccionada.getSelectedIndex());
-        if(LogicaJuego.jugada(this.palabra, Seleccionada.getSelectedItem().toString().charAt(0)))
-        {   
-            
-            Seleccionada.removeItemAt(Seleccionada.getSelectedIndex());
-            this.showArea();
-            
-            //  Seleccionada.remove(Seleccionada.getSelectedIndex());
-
-        }else{
-            Seleccionada.removeItemAt(Seleccionada.getSelectedIndex());
-            //   Seleccionada.remove(Seleccionada.getSelectedIndex());
-            this.showArea();
-        }
+       algoAlgo();
 
     }//GEN-LAST:event_jButton1ActionPerformed
+
+    private void SeleccionadaKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_SeleccionadaKeyPressed
+        if(evt.getKeyCode()== KeyEvent.VK_ENTER)
+        {
+            algoAlgo();
+            
+        } 
+           
+    }//GEN-LAST:event_SeleccionadaKeyPressed
 
     public void showArea() {
         char b;
@@ -183,10 +187,7 @@ public class Juego extends javax.swing.JDialog {
         }
         if(this.palabra.fallos!="0"){  
            
-            if(this.palabra.fallos.length()==1){
-            letrasError.append(" "+this.palabra.fallos);   
-            }    
-            else if(this.palabra.fallos.length()<=5){
+           if(this.palabra.fallos.length()<=5){
                 
                 for (int i = 0; i < this.palabra.fallos.length(); i++) {
                     
@@ -196,8 +197,8 @@ public class Juego extends javax.swing.JDialog {
                         continue;
 
                     }
-                    letrasError.append(",");
-                    letrasError.append(Character.toString(this.palabra.fallos.charAt(i)));
+                letrasError.append(",");
+                letrasError.append(Character.toString(this.palabra.fallos.charAt(i)));
                    
                 } 
                 
@@ -211,7 +212,39 @@ public class Juego extends javax.swing.JDialog {
         System.out.println(this.palabra.palabra);
     }  
     
-    
+    private void algoAlgo()
+    {
+        boolean gano=true;
+        System.out.println(Seleccionada.getSelectedIndex());
+        if(LogicaJuego.jugada(this.palabra, Seleccionada.getSelectedItem().toString().charAt(0)))
+        {   
+            
+            Seleccionada.removeItemAt(Seleccionada.getSelectedIndex());
+            this.showArea();
+            for (boolean statu : this.palabra.status) {
+                if(statu!=true){
+                    gano=false;
+                }
+            }
+            if(gano==true){
+            JOptionPane.showMessageDialog(this,"GANOO");
+            dispose();
+            }
+            //  Seleccionada.remove(Seleccionada.getSelectedIndex());
+
+        }else{
+            Seleccionada.removeItemAt(Seleccionada.getSelectedIndex());
+            //   Seleccionada.remove(Seleccionada.getSelectedIndex());
+            this.showArea();
+            
+            if(this.palabra.fallos.length()>=5){
+                
+                JOptionPane.showMessageDialog(this,"Perdio");
+                dispose();
+            
+            }
+        }
+    }
     
     
     

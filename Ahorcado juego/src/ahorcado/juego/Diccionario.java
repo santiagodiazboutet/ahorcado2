@@ -24,29 +24,21 @@ public class Diccionario {
     public Diccionario(){
         this.Palabras= new ArrayList<Palabra>();
     }
-    public Diccionario(String Dificultad){
-        this();
-        this._Dificultad=Dificultad;
-        
-    }
+    
     public void addPalabra(Palabra palabra){
         this.Palabras.add(palabra);
         
     }
-    
-    public String GetDificultad(){
-        return this._Dificultad;
-    }
-    
+
     public static Palabra getRandomPalabra(String dificultad){
         Diccionario a = Diccionario.deserializarPalabras(dificultad);
         
         return a.Palabras.get((int) Math.floor(Math.random() * a.Palabras.size()));
     }
 
-    public static void serializarPalabras(Diccionario lista) {
+    public static void serializarPalabras(Diccionario lista, String Dificultad) {
         XMLEncoder encoder = null;
-        String ruta=lista.GetDificultad()+"Dicc.xml";
+        String ruta=Dificultad+"Dicc.xml";
         try
         {
             FileOutputStream file = new FileOutputStream(ruta);

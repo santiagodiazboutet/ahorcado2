@@ -20,7 +20,7 @@
     </void>
    </void>
   </object>
-  <string>Ahora</string>
+  <string>Ahore</string>
  </void>
 </void>
 <void class="ahorcado.juego.Palabra" method="getField">
@@ -42,7 +42,7 @@
     </void>
    </void>
   </object>
-  <string>Ahora</string>
+  <string>Ahoro</string>
  </void>
 </void>
 <void class="ahorcado.juego.Palabra" method="getField">
@@ -64,7 +64,7 @@
     </void>
    </void>
   </object>
-  <string>Ahora</string>
+  <string>Ahori</string>
  </void>
 </void>
 <void class="ahorcado.juego.Palabra" method="getField">
@@ -86,7 +86,7 @@
     </void>
    </void>
   </object>
-  <string>Ahora</string>
+  <string>Ahoru</string>
  </void>
 </void>
 <void class="ahorcado.juego.Palabra" method="getField">
