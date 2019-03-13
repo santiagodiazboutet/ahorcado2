@@ -40,7 +40,7 @@ public class Diccionario {
     
     public static Palabra getRandomPalabra(String dificultad){
         Diccionario a = Diccionario.deserializarPalabras(dificultad);
-
+        
         return a.Palabras.get((int) Math.floor(Math.random() * a.Palabras.size()));
     }
 

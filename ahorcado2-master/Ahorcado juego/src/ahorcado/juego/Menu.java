@@ -12,6 +12,7 @@ package ahorcado.juego;
 public class Menu extends javax.swing.JFrame {
     
     Juego juego;
+    
     /**
      * Creates new form Menu
      */
@@ -29,12 +30,36 @@ public class Menu extends javax.swing.JFrame {
     private void initComponents() {
 
         buttonGroup1 = new javax.swing.ButtonGroup();
+        jInternalFrame1 = new javax.swing.JInternalFrame();
+        jMenuItem1 = new javax.swing.JMenuItem();
+        jMenuItem2 = new javax.swing.JMenuItem();
+        jMenuItem3 = new javax.swing.JMenuItem();
         jPanel1 = new javax.swing.JPanel();
         dificultadFacil = new javax.swing.JRadioButton();
         dificultadMedia = new javax.swing.JRadioButton();
         dificultadDificil = new javax.swing.JRadioButton();
-        jButton1 = new javax.swing.JButton();
+        Comenzar = new javax.swing.JButton();
         jLabel1 = new javax.swing.JLabel();
+        Config = new javax.swing.JButton();
+
+        jInternalFrame1.setVisible(true);
+
+        javax.swing.GroupLayout jInternalFrame1Layout = new javax.swing.GroupLayout(jInternalFrame1.getContentPane());
+        jInternalFrame1.getContentPane().setLayout(jInternalFrame1Layout);
+        jInternalFrame1Layout.setHorizontalGroup(
+            jInternalFrame1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 0, Short.MAX_VALUE)
+        );
+        jInternalFrame1Layout.setVerticalGroup(
+            jInternalFrame1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 0, Short.MAX_VALUE)
+        );
+
+        jMenuItem1.setText("jMenuItem1");
+
+        jMenuItem2.setText("jMenuItem2");
+
+        jMenuItem3.setText("jMenuItem3");
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setBackground(new java.awt.Color(0, 0, 0));
@@ -50,21 +75,28 @@ public class Menu extends javax.swing.JFrame {
         dificultadMedia.setBackground(new java.awt.Color(204, 204, 204));
         buttonGroup1.add(dificultadMedia);
         dificultadMedia.setSelected(true);
-        dificultadMedia.setText("Medio");
+        dificultadMedia.setText("Normal");
         dificultadMedia.setToolTipText("");
 
         dificultadDificil.setBackground(new java.awt.Color(204, 204, 204));
         buttonGroup1.add(dificultadDificil);
         dificultadDificil.setText("Dificil");
 
-        jButton1.setText("Comenzar");
-        jButton1.addActionListener(new java.awt.event.ActionListener() {
+        Comenzar.setText("Comenzar");
+        Comenzar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton1ActionPerformed(evt);
+                ComenzarActionPerformed(evt);
             }
         });
 
         jLabel1.setText("Bienvenido al ahorcado, seleccione una dificultad y haga click a empezar");
+
+        Config.setText("Administrar palabras");
+        Config.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                ConfigActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
@@ -75,24 +107,25 @@ public class Menu extends javax.swing.JFrame {
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(dificultadMedia)
                     .addComponent(dificultadFacil)
-                    .addComponent(dificultadDificil))
-                .addGap(43, 43, 43)
+                    .addComponent(dificultadDificil)
+                    .addComponent(Config, javax.swing.GroupLayout.PREFERRED_SIZE, 154, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGap(0, 0, Short.MAX_VALUE)
-                        .addComponent(jButton1))
+                        .addComponent(Comenzar))
                     .addComponent(jLabel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addGap(24, 24, 24))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                .addContainerGap(24, Short.MAX_VALUE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 67, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(44, 44, 44)
-                        .addComponent(jButton1)
+                        .addComponent(Comenzar)
                         .addGap(35, 35, 35))
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addComponent(dificultadFacil)
@@ -100,7 +133,9 @@ public class Menu extends javax.swing.JFrame {
                         .addComponent(dificultadMedia)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(dificultadDificil)
-                        .addGap(78, 78, 78))))
+                        .addGap(18, 18, 18)
+                        .addComponent(Config)
+                        .addGap(28, 28, 28))))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -108,21 +143,20 @@ public class Menu extends javax.swing.JFrame {
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addContainerGap()
                 .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(109, Short.MAX_VALUE))
+                .addGap(0, 0, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                .addGap(0, 0, Short.MAX_VALUE)
+                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+    private void ComenzarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ComenzarActionPerformed
         // TODO add your handling code here:
         
        if(dificultadFacil.isSelected()==true)
@@ -130,25 +164,40 @@ public class Menu extends javax.swing.JFrame {
           this.juego = new Juego(this, true,"Facil");
           this.juego.getPalabra();
           this.juego.showArea();
+          this.setVisible(false);
           this.juego.setVisible(true);
+          this.setVisible(true);
        }else if(dificultadMedia.isSelected()==true)
        {
           this.juego = new Juego(this, true,"Media");
           this.juego.getPalabra();
+          this.juego.showArea();
+          this.setVisible(false);
           this.juego.setVisible(true);
+          this.setVisible(true);
        }
        else
        {
           this.juego = new Juego(this, true,"Dificil");
           this.juego.getPalabra();
-         
+          this.juego.showArea();
+          this.setVisible(false);
           this.juego.setVisible(true);
+          this.setVisible(true);
           
        }
        
        
        
-    }//GEN-LAST:event_jButton1ActionPerformed
+    }//GEN-LAST:event_ComenzarActionPerformed
+
+    private void ConfigActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ConfigActionPerformed
+        // TODO add your handling code here
+        ConfigPalabras ventana=new ConfigPalabras(this,true);
+        this.setVisible(false);
+        ventana.setVisible(true);
+        this.setVisible(true);
+    }//GEN-LAST:event_ConfigActionPerformed
 
     /**
      * @param args the command line arguments
@@ -186,12 +235,17 @@ public class Menu extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton Comenzar;
+    private javax.swing.JButton Config;
     private javax.swing.ButtonGroup buttonGroup1;
     private javax.swing.JRadioButton dificultadDificil;
     private javax.swing.JRadioButton dificultadFacil;
     private javax.swing.JRadioButton dificultadMedia;
-    private javax.swing.JButton jButton1;
+    private javax.swing.JInternalFrame jInternalFrame1;
     private javax.swing.JLabel jLabel1;
+    private javax.swing.JMenuItem jMenuItem1;
+    private javax.swing.JMenuItem jMenuItem2;
+    private javax.swing.JMenuItem jMenuItem3;
     private javax.swing.JPanel jPanel1;
     // End of variables declaration//GEN-END:variables
 }

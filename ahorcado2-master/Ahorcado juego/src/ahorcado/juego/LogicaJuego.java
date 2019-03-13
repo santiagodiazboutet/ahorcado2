@@ -39,7 +39,8 @@ public class LogicaJuego {
     */
     
     public static boolean jugada(Palabra a, char letra){
-        Scanner sc = new Scanner(System.in);
+        StringBuilder aux=new StringBuilder();
+        
         boolean resultado=false;
        
        
@@ -52,23 +53,20 @@ public class LogicaJuego {
                 resultado=true;
                
             }
-          
-          
         }
         if(resultado==false){
             if(a.fallos=="0"){
-                a.fallos=Character.toString(letra);
-                System.out.println(a.fallos);
+          
+                aux.append(letra);
+ 
             }
             else{
-                a.fallos+=Character.toString(letra);
-                System.out.println(a.fallos);
+                aux.append(a.fallos);
+                aux.append(letra);
+            
             }
             
-         
-                    
-            
-            
+            a.fallos=aux.toString();
         }
       
         return resultado;
