@@ -42,12 +42,37 @@ public final class Juego extends javax.swing.JDialog {
 
         jPanel1 = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
-        Seleccionada = new javax.swing.JComboBox<>();
-        jButton1 = new javax.swing.JButton();
-        jScrollPane1 = new javax.swing.JScrollPane();
-        areaPalabra = new javax.swing.JTextPane();
         jScrollPane2 = new javax.swing.JScrollPane();
         letrasError = new javax.swing.JTextArea();
+        ALabel = new javax.swing.JLabel();
+        BLabel = new javax.swing.JLabel();
+        CLabel = new javax.swing.JLabel();
+        ELabel = new javax.swing.JLabel();
+        FLabel = new javax.swing.JLabel();
+        GLabel = new javax.swing.JLabel();
+        HLabel = new javax.swing.JLabel();
+        ÑLabel = new javax.swing.JLabel();
+        NLabel = new javax.swing.JLabel();
+        MLabel = new javax.swing.JLabel();
+        LLabel = new javax.swing.JLabel();
+        KLabel = new javax.swing.JLabel();
+        JLabel = new javax.swing.JLabel();
+        ILabel = new javax.swing.JLabel();
+        ULabel = new javax.swing.JLabel();
+        TLabel = new javax.swing.JLabel();
+        SLabel = new javax.swing.JLabel();
+        RLabel = new javax.swing.JLabel();
+        QLabel = new javax.swing.JLabel();
+        PLabel = new javax.swing.JLabel();
+        OLabel = new javax.swing.JLabel();
+        VLabel = new javax.swing.JLabel();
+        WLabel = new javax.swing.JLabel();
+        XLabel = new javax.swing.JLabel();
+        YLabel = new javax.swing.JLabel();
+        ZLabel = new javax.swing.JLabel();
+        jScrollPane3 = new javax.swing.JScrollPane();
+        areaPalabra = new javax.swing.JTextArea();
+        DLabel = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
 
@@ -55,85 +80,522 @@ public final class Juego extends javax.swing.JDialog {
 
         jLabel1.setText("jLabel1");
 
-        Seleccionada.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z" }));
-        Seleccionada.addKeyListener(new java.awt.event.KeyAdapter() {
-            public void keyPressed(java.awt.event.KeyEvent evt) {
-                SeleccionadaKeyPressed(evt);
-            }
-        });
-
-        jButton1.setText("Jugar");
-        jButton1.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton1ActionPerformed(evt);
-            }
-        });
-
-        jScrollPane1.setBackground(new java.awt.Color(204, 255, 255));
-        jScrollPane1.setForeground(new java.awt.Color(204, 255, 255));
-
-        areaPalabra.setEditable(false);
-        areaPalabra.setBackground(new java.awt.Color(204, 255, 255));
-        areaPalabra.setBorder(null);
-        areaPalabra.setFont(new java.awt.Font("Tahoma", 0, 36)); // NOI18N
-        areaPalabra.setForeground(new java.awt.Color(0, 0, 0));
-        jScrollPane1.setViewportView(areaPalabra);
+        jScrollPane2.setBorder(null);
 
         letrasError.setEditable(false);
         letrasError.setBackground(new java.awt.Color(204, 255, 255));
         letrasError.setColumns(20);
-        letrasError.setFont(new java.awt.Font("Tahoma", 0, 36)); // NOI18N
-        letrasError.setForeground(new java.awt.Color(0, 0, 0));
-        letrasError.setLineWrap(true);
+        letrasError.setFont(new java.awt.Font("Lucida Sans", 0, 36)); // NOI18N
+        letrasError.setForeground(new java.awt.Color(153, 153, 153));
         letrasError.setRows(1);
         letrasError.setText("Letras erradas:");
         letrasError.setBorder(null);
         jScrollPane2.setViewportView(letrasError);
 
+        ALabel.setBackground(new java.awt.Color(204, 255, 255));
+        ALabel.setFont(new java.awt.Font("Lucida Sans", 1, 36)); // NOI18N
+        ALabel.setForeground(new java.awt.Color(153, 153, 153));
+        ALabel.setText("A");
+        ALabel.setAlignmentX(2.0F);
+        ALabel.setPreferredSize(new java.awt.Dimension(35, 40));
+        ALabel.setVerticalTextPosition(javax.swing.SwingConstants.TOP);
+        ALabel.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                ALabelMouseClicked(evt);
+            }
+        });
+
+        BLabel.setBackground(new java.awt.Color(204, 255, 255));
+        BLabel.setFont(new java.awt.Font("Lucida Sans", 1, 36)); // NOI18N
+        BLabel.setForeground(new java.awt.Color(153, 153, 153));
+        BLabel.setText("B");
+        BLabel.setAlignmentX(2.0F);
+        BLabel.setPreferredSize(new java.awt.Dimension(35, 40));
+        BLabel.setVerticalTextPosition(javax.swing.SwingConstants.TOP);
+        BLabel.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                BLabelMouseClicked(evt);
+            }
+        });
+
+        CLabel.setBackground(new java.awt.Color(204, 255, 255));
+        CLabel.setFont(new java.awt.Font("Lucida Sans", 1, 36)); // NOI18N
+        CLabel.setForeground(new java.awt.Color(153, 153, 153));
+        CLabel.setText("C");
+        CLabel.setAlignmentX(2.0F);
+        CLabel.setPreferredSize(new java.awt.Dimension(35, 40));
+        CLabel.setVerticalTextPosition(javax.swing.SwingConstants.TOP);
+        CLabel.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                CLabelMouseClicked(evt);
+            }
+        });
+
+        ELabel.setBackground(new java.awt.Color(204, 255, 255));
+        ELabel.setFont(new java.awt.Font("Lucida Sans", 1, 36)); // NOI18N
+        ELabel.setForeground(new java.awt.Color(153, 153, 153));
+        ELabel.setText("E");
+        ELabel.setAlignmentX(2.0F);
+        ELabel.setPreferredSize(new java.awt.Dimension(35, 40));
+        ELabel.setVerticalTextPosition(javax.swing.SwingConstants.TOP);
+        ELabel.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                ELabelMouseClicked(evt);
+            }
+        });
+
+        FLabel.setBackground(new java.awt.Color(204, 255, 255));
+        FLabel.setFont(new java.awt.Font("Lucida Sans", 1, 36)); // NOI18N
+        FLabel.setForeground(new java.awt.Color(153, 153, 153));
+        FLabel.setText("F");
+        FLabel.setAlignmentX(2.0F);
+        FLabel.setPreferredSize(new java.awt.Dimension(35, 40));
+        FLabel.setVerticalTextPosition(javax.swing.SwingConstants.TOP);
+        FLabel.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                FLabelMouseClicked(evt);
+            }
+        });
+
+        GLabel.setBackground(new java.awt.Color(204, 255, 255));
+        GLabel.setFont(new java.awt.Font("Lucida Sans", 1, 36)); // NOI18N
+        GLabel.setForeground(new java.awt.Color(153, 153, 153));
+        GLabel.setText("G");
+        GLabel.setAlignmentX(2.0F);
+        GLabel.setPreferredSize(new java.awt.Dimension(35, 40));
+        GLabel.setVerticalTextPosition(javax.swing.SwingConstants.TOP);
+        GLabel.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                GLabelMouseClicked(evt);
+            }
+        });
+
+        HLabel.setBackground(new java.awt.Color(204, 255, 255));
+        HLabel.setFont(new java.awt.Font("Lucida Sans", 1, 36)); // NOI18N
+        HLabel.setForeground(new java.awt.Color(153, 153, 153));
+        HLabel.setText("H");
+        HLabel.setAlignmentX(2.0F);
+        HLabel.setPreferredSize(new java.awt.Dimension(35, 40));
+        HLabel.setVerticalTextPosition(javax.swing.SwingConstants.TOP);
+        HLabel.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                HLabelMouseClicked(evt);
+            }
+        });
+
+        ÑLabel.setBackground(new java.awt.Color(204, 255, 255));
+        ÑLabel.setFont(new java.awt.Font("Lucida Sans", 1, 36)); // NOI18N
+        ÑLabel.setForeground(new java.awt.Color(153, 153, 153));
+        ÑLabel.setText("Ñ");
+        ÑLabel.setAlignmentX(2.0F);
+        ÑLabel.setPreferredSize(new java.awt.Dimension(35, 40));
+        ÑLabel.setVerticalTextPosition(javax.swing.SwingConstants.TOP);
+        ÑLabel.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                ÑLabelMouseClicked(evt);
+            }
+        });
+
+        NLabel.setBackground(new java.awt.Color(204, 255, 255));
+        NLabel.setFont(new java.awt.Font("Lucida Sans", 1, 36)); // NOI18N
+        NLabel.setForeground(new java.awt.Color(153, 153, 153));
+        NLabel.setText("N");
+        NLabel.setAlignmentX(2.0F);
+        NLabel.setPreferredSize(new java.awt.Dimension(35, 40));
+        NLabel.setVerticalTextPosition(javax.swing.SwingConstants.TOP);
+        NLabel.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                NLabelMouseClicked(evt);
+            }
+        });
+
+        MLabel.setBackground(new java.awt.Color(204, 255, 255));
+        MLabel.setFont(new java.awt.Font("Lucida Sans", 1, 36)); // NOI18N
+        MLabel.setForeground(new java.awt.Color(153, 153, 153));
+        MLabel.setText("M");
+        MLabel.setAlignmentX(2.0F);
+        MLabel.setPreferredSize(new java.awt.Dimension(35, 40));
+        MLabel.setVerticalTextPosition(javax.swing.SwingConstants.TOP);
+        MLabel.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                MLabelMouseClicked(evt);
+            }
+        });
+
+        LLabel.setBackground(new java.awt.Color(204, 255, 255));
+        LLabel.setFont(new java.awt.Font("Lucida Sans", 1, 36)); // NOI18N
+        LLabel.setForeground(new java.awt.Color(153, 153, 153));
+        LLabel.setText("L");
+        LLabel.setAlignmentX(2.0F);
+        LLabel.setPreferredSize(new java.awt.Dimension(35, 40));
+        LLabel.setVerticalTextPosition(javax.swing.SwingConstants.TOP);
+        LLabel.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                LLabelMouseClicked(evt);
+            }
+        });
+
+        KLabel.setBackground(new java.awt.Color(204, 255, 255));
+        KLabel.setFont(new java.awt.Font("Lucida Sans", 1, 36)); // NOI18N
+        KLabel.setForeground(new java.awt.Color(153, 153, 153));
+        KLabel.setText("K");
+        KLabel.setAlignmentX(2.0F);
+        KLabel.setPreferredSize(new java.awt.Dimension(35, 40));
+        KLabel.setVerticalTextPosition(javax.swing.SwingConstants.TOP);
+        KLabel.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                KLabelMouseClicked(evt);
+            }
+        });
+
+        JLabel.setBackground(new java.awt.Color(204, 255, 255));
+        JLabel.setFont(new java.awt.Font("Lucida Sans", 1, 36)); // NOI18N
+        JLabel.setForeground(new java.awt.Color(153, 153, 153));
+        JLabel.setText("J");
+        JLabel.setAlignmentX(2.0F);
+        JLabel.setPreferredSize(new java.awt.Dimension(35, 40));
+        JLabel.setVerticalTextPosition(javax.swing.SwingConstants.TOP);
+        JLabel.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                JLabelMouseClicked(evt);
+            }
+        });
+
+        ILabel.setBackground(new java.awt.Color(204, 255, 255));
+        ILabel.setFont(new java.awt.Font("Lucida Sans", 1, 36)); // NOI18N
+        ILabel.setForeground(new java.awt.Color(153, 153, 153));
+        ILabel.setText("I");
+        ILabel.setAlignmentX(2.0F);
+        ILabel.setPreferredSize(new java.awt.Dimension(35, 40));
+        ILabel.setVerticalTextPosition(javax.swing.SwingConstants.TOP);
+        ILabel.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                ILabelMouseClicked(evt);
+            }
+        });
+
+        ULabel.setBackground(new java.awt.Color(204, 255, 255));
+        ULabel.setFont(new java.awt.Font("Lucida Sans", 1, 36)); // NOI18N
+        ULabel.setForeground(new java.awt.Color(153, 153, 153));
+        ULabel.setText("U");
+        ULabel.setAlignmentX(2.0F);
+        ULabel.setPreferredSize(new java.awt.Dimension(35, 40));
+        ULabel.setVerticalTextPosition(javax.swing.SwingConstants.TOP);
+        ULabel.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                ULabelMouseClicked(evt);
+            }
+        });
+
+        TLabel.setBackground(new java.awt.Color(204, 255, 255));
+        TLabel.setFont(new java.awt.Font("Lucida Sans", 1, 36)); // NOI18N
+        TLabel.setForeground(new java.awt.Color(153, 153, 153));
+        TLabel.setText("T");
+        TLabel.setAlignmentX(2.0F);
+        TLabel.setPreferredSize(new java.awt.Dimension(35, 40));
+        TLabel.setVerticalTextPosition(javax.swing.SwingConstants.TOP);
+        TLabel.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                TLabelMouseClicked(evt);
+            }
+        });
+
+        SLabel.setBackground(new java.awt.Color(204, 255, 255));
+        SLabel.setFont(new java.awt.Font("Lucida Sans", 1, 36)); // NOI18N
+        SLabel.setForeground(new java.awt.Color(153, 153, 153));
+        SLabel.setText("S");
+        SLabel.setAlignmentX(2.0F);
+        SLabel.setPreferredSize(new java.awt.Dimension(35, 40));
+        SLabel.setVerticalTextPosition(javax.swing.SwingConstants.TOP);
+        SLabel.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                SLabelMouseClicked(evt);
+            }
+        });
+
+        RLabel.setBackground(new java.awt.Color(204, 255, 255));
+        RLabel.setFont(new java.awt.Font("Lucida Sans", 1, 36)); // NOI18N
+        RLabel.setForeground(new java.awt.Color(153, 153, 153));
+        RLabel.setText("R");
+        RLabel.setAlignmentX(2.0F);
+        RLabel.setPreferredSize(new java.awt.Dimension(35, 40));
+        RLabel.setVerticalTextPosition(javax.swing.SwingConstants.TOP);
+        RLabel.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                RLabelMouseClicked(evt);
+            }
+        });
+
+        QLabel.setBackground(new java.awt.Color(204, 255, 255));
+        QLabel.setFont(new java.awt.Font("Lucida Sans", 1, 36)); // NOI18N
+        QLabel.setForeground(new java.awt.Color(153, 153, 153));
+        QLabel.setText("Q");
+        QLabel.setAlignmentX(2.0F);
+        QLabel.setPreferredSize(new java.awt.Dimension(35, 40));
+        QLabel.setVerticalTextPosition(javax.swing.SwingConstants.TOP);
+        QLabel.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                QLabelMouseClicked(evt);
+            }
+        });
+
+        PLabel.setBackground(new java.awt.Color(204, 255, 255));
+        PLabel.setFont(new java.awt.Font("Lucida Sans", 1, 36)); // NOI18N
+        PLabel.setForeground(new java.awt.Color(153, 153, 153));
+        PLabel.setText("P");
+        PLabel.setAlignmentX(2.0F);
+        PLabel.setPreferredSize(new java.awt.Dimension(35, 40));
+        PLabel.setVerticalTextPosition(javax.swing.SwingConstants.TOP);
+        PLabel.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                PLabelMouseClicked(evt);
+            }
+        });
+
+        OLabel.setBackground(new java.awt.Color(204, 255, 255));
+        OLabel.setFont(new java.awt.Font("Lucida Sans", 1, 36)); // NOI18N
+        OLabel.setForeground(new java.awt.Color(153, 153, 153));
+        OLabel.setText("O");
+        OLabel.setAlignmentX(2.0F);
+        OLabel.setPreferredSize(new java.awt.Dimension(35, 40));
+        OLabel.setVerticalTextPosition(javax.swing.SwingConstants.TOP);
+        OLabel.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                OLabelMouseClicked(evt);
+            }
+        });
+
+        VLabel.setBackground(new java.awt.Color(204, 255, 255));
+        VLabel.setFont(new java.awt.Font("Lucida Sans", 1, 36)); // NOI18N
+        VLabel.setForeground(new java.awt.Color(153, 153, 153));
+        VLabel.setText("V");
+        VLabel.setAlignmentX(2.0F);
+        VLabel.setPreferredSize(new java.awt.Dimension(35, 40));
+        VLabel.setVerticalTextPosition(javax.swing.SwingConstants.TOP);
+        VLabel.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                VLabelMouseClicked(evt);
+            }
+        });
+
+        WLabel.setBackground(new java.awt.Color(204, 255, 255));
+        WLabel.setFont(new java.awt.Font("Lucida Sans", 1, 36)); // NOI18N
+        WLabel.setForeground(new java.awt.Color(153, 153, 153));
+        WLabel.setText("W");
+        WLabel.setAlignmentX(2.0F);
+        WLabel.setPreferredSize(new java.awt.Dimension(35, 40));
+        WLabel.setVerticalTextPosition(javax.swing.SwingConstants.TOP);
+        WLabel.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                WLabelMouseClicked(evt);
+            }
+        });
+
+        XLabel.setBackground(new java.awt.Color(204, 255, 255));
+        XLabel.setFont(new java.awt.Font("Lucida Sans", 1, 36)); // NOI18N
+        XLabel.setForeground(new java.awt.Color(153, 153, 153));
+        XLabel.setText("X");
+        XLabel.setAlignmentX(2.0F);
+        XLabel.setPreferredSize(new java.awt.Dimension(35, 40));
+        XLabel.setVerticalTextPosition(javax.swing.SwingConstants.TOP);
+        XLabel.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                XLabelMouseClicked(evt);
+            }
+        });
+
+        YLabel.setBackground(new java.awt.Color(204, 255, 255));
+        YLabel.setFont(new java.awt.Font("Lucida Sans", 1, 36)); // NOI18N
+        YLabel.setForeground(new java.awt.Color(153, 153, 153));
+        YLabel.setText("Y");
+        YLabel.setAlignmentX(2.0F);
+        YLabel.setPreferredSize(new java.awt.Dimension(35, 40));
+        YLabel.setVerticalTextPosition(javax.swing.SwingConstants.TOP);
+        YLabel.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                YLabelMouseClicked(evt);
+            }
+        });
+
+        ZLabel.setBackground(new java.awt.Color(204, 255, 255));
+        ZLabel.setFont(new java.awt.Font("Lucida Sans", 1, 36)); // NOI18N
+        ZLabel.setForeground(new java.awt.Color(153, 153, 153));
+        ZLabel.setText("Z");
+        ZLabel.setAlignmentX(2.0F);
+        ZLabel.setPreferredSize(new java.awt.Dimension(35, 40));
+        ZLabel.setVerticalTextPosition(javax.swing.SwingConstants.TOP);
+        ZLabel.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                ZLabelMouseClicked(evt);
+            }
+        });
+
+        jScrollPane3.setBackground(new java.awt.Color(204, 255, 255));
+        jScrollPane3.setBorder(null);
+        jScrollPane3.setForeground(new java.awt.Color(204, 204, 204));
+        jScrollPane3.setHorizontalScrollBarPolicy(javax.swing.ScrollPaneConstants.HORIZONTAL_SCROLLBAR_NEVER);
+        jScrollPane3.setVerticalScrollBarPolicy(javax.swing.ScrollPaneConstants.VERTICAL_SCROLLBAR_NEVER);
+        jScrollPane3.setFont(new java.awt.Font("Lucida Sans", 0, 36)); // NOI18N
+
+        areaPalabra.setEditable(false);
+        areaPalabra.setBackground(new java.awt.Color(204, 255, 255));
+        areaPalabra.setColumns(20);
+        areaPalabra.setFont(new java.awt.Font("Lucida Sans Typewriter", 1, 36)); // NOI18N
+        areaPalabra.setForeground(new java.awt.Color(204, 204, 204));
+        areaPalabra.setRows(1);
+        areaPalabra.setBorder(null);
+        jScrollPane3.setViewportView(areaPalabra);
+
+        DLabel.setBackground(new java.awt.Color(204, 255, 255));
+        DLabel.setFont(new java.awt.Font("Lucida Sans", 1, 36)); // NOI18N
+        DLabel.setForeground(new java.awt.Color(153, 153, 153));
+        DLabel.setText("D");
+        DLabel.setAlignmentX(2.0F);
+        DLabel.setPreferredSize(new java.awt.Dimension(35, 40));
+        DLabel.setVerticalTextPosition(javax.swing.SwingConstants.TOP);
+        DLabel.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                DLabelMouseClicked(evt);
+            }
+        });
+
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 607, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
-                .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 287, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap())
-            .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGap(290, 290, 290)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jButton1)
-                    .addComponent(Seleccionada, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(740, Short.MAX_VALUE))
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(0, 0, Short.MAX_VALUE))
+            .addGroup(jPanel1Layout.createSequentialGroup()
+                .addGap(101, 101, 101)
+                .addComponent(jScrollPane3)
+                .addGap(336, 336, 336))
+            .addGroup(jPanel1Layout.createSequentialGroup()
+                .addGap(33, 33, 33)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                            .addGroup(jPanel1Layout.createSequentialGroup()
+                                .addComponent(ULabel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(18, 18, 18)
+                                .addComponent(VLabel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(18, 18, 18)
+                                .addComponent(WLabel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(18, 18, 18)
+                                .addComponent(XLabel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(18, 18, 18)
+                                .addComponent(YLabel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(7, 7, 7))
+                            .addGroup(jPanel1Layout.createSequentialGroup()
+                                .addComponent(ÑLabel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(18, 18, 18)
+                                .addComponent(OLabel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(18, 18, 18)
+                                .addComponent(PLabel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(18, 18, 18)
+                                .addComponent(QLabel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(18, 18, 18)
+                                .addComponent(RLabel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(6, 6, 6)))
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(jPanel1Layout.createSequentialGroup()
+                                .addComponent(SLabel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(18, 18, 18)
+                                .addComponent(TLabel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(ZLabel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addComponent(HLabel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(ALabel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(18, 18, 18)
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                            .addGroup(jPanel1Layout.createSequentialGroup()
+                                .addComponent(BLabel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(18, 18, 18)
+                                .addComponent(CLabel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(18, 18, 18)
+                                .addComponent(DLabel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addComponent(ELabel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(FLabel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addGroup(jPanel1Layout.createSequentialGroup()
+                                .addComponent(ILabel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(18, 18, 18)
+                                .addComponent(JLabel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(18, 18, 18)
+                                .addComponent(KLabel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(18, 18, 18)
+                                .addComponent(LLabel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(MLabel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addGap(18, 18, 18)
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(NLabel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(GLabel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 287, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(16, 16, 16))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
-                .addContainerGap()
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(jLabel1, javax.swing.GroupLayout.DEFAULT_SIZE, 228, Short.MAX_VALUE)
-                    .addComponent(jScrollPane1))
-                .addGap(53, 53, 53)
-                .addComponent(Seleccionada, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(42, 42, 42)
-                .addComponent(jButton1)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 142, Short.MAX_VALUE)
-                .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap())
+                .addGap(49, 49, 49)
+                .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addGap(56, 56, 56)
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(ELabel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                                .addComponent(ALabel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(BLabel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(CLabel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(FLabel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(GLabel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(DLabel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addGap(17, 17, 17)
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(ILabel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(JLabel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(KLabel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(LLabel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(MLabel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(NLabel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(HLabel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(18, 18, 18)
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(OLabel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(PLabel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(QLabel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(RLabel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(SLabel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(TLabel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(ÑLabel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(VLabel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(WLabel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(XLabel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(YLabel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(ZLabel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(ULabel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addContainerGap())
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 49, Short.MAX_VALUE)
+                        .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 228, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(131, 131, 131))))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addGroup(layout.createSequentialGroup()
                 .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap())
+                .addGap(0, 0, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -143,21 +605,166 @@ public final class Juego extends javax.swing.JDialog {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+    private void BLabelMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_BLabelMouseClicked
         // TODO add your handling code here:
-       algoAlgo();
+        algoAlgo('B');
+    }//GEN-LAST:event_BLabelMouseClicked
 
-    }//GEN-LAST:event_jButton1ActionPerformed
+    private void CLabelMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_CLabelMouseClicked
+        // TODO add your handling code here:
+                algoAlgo('C');
 
-    private void SeleccionadaKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_SeleccionadaKeyPressed
-        if(evt.getKeyCode()== KeyEvent.VK_ENTER)
-        {
-            algoAlgo();
-            
-        } 
-           
-    }//GEN-LAST:event_SeleccionadaKeyPressed
+    }//GEN-LAST:event_CLabelMouseClicked
 
+    private void ELabelMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_ELabelMouseClicked
+        // TODO add your handling code here:
+                algoAlgo('E');
+
+    }//GEN-LAST:event_ELabelMouseClicked
+
+    private void FLabelMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_FLabelMouseClicked
+        // TODO add your handling code here:
+                algoAlgo('F');
+
+    }//GEN-LAST:event_FLabelMouseClicked
+
+    private void GLabelMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_GLabelMouseClicked
+        // TODO add your handling code here:
+                algoAlgo('G');
+
+    }//GEN-LAST:event_GLabelMouseClicked
+
+    private void HLabelMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_HLabelMouseClicked
+        // TODO add your handling code here:
+                algoAlgo('H');
+
+    }//GEN-LAST:event_HLabelMouseClicked
+
+    private void ALabelMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_ALabelMouseClicked
+        // TODO add your handling code here:
+                algoAlgo('A');
+
+    }//GEN-LAST:event_ALabelMouseClicked
+
+    private void ILabelMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_ILabelMouseClicked
+        // TODO add your handling code here:
+                algoAlgo('I');
+
+    }//GEN-LAST:event_ILabelMouseClicked
+
+    private void JLabelMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_JLabelMouseClicked
+        // TODO add your handling code here:
+                algoAlgo('J');
+
+    }//GEN-LAST:event_JLabelMouseClicked
+
+    private void KLabelMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_KLabelMouseClicked
+        // TODO add your handling code here:
+                algoAlgo('K');
+
+    }//GEN-LAST:event_KLabelMouseClicked
+
+    private void LLabelMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_LLabelMouseClicked
+        // TODO add your handling code here:
+                algoAlgo('L');
+
+    }//GEN-LAST:event_LLabelMouseClicked
+
+    private void MLabelMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_MLabelMouseClicked
+        // TODO add your handling code here:
+                algoAlgo('M');
+
+    }//GEN-LAST:event_MLabelMouseClicked
+
+    private void NLabelMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_NLabelMouseClicked
+        // TODO add your handling code here:
+                algoAlgo('N');
+
+    }//GEN-LAST:event_NLabelMouseClicked
+
+    private void ÑLabelMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_ÑLabelMouseClicked
+        // TODO add your handling code here:
+                algoAlgo('Ñ');
+
+    }//GEN-LAST:event_ÑLabelMouseClicked
+
+    private void OLabelMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_OLabelMouseClicked
+        // TODO add your handling code here:
+                algoAlgo('O');
+
+    }//GEN-LAST:event_OLabelMouseClicked
+
+    private void PLabelMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_PLabelMouseClicked
+        // TODO add your handling code here:
+                algoAlgo('P');
+
+    }//GEN-LAST:event_PLabelMouseClicked
+
+    private void QLabelMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_QLabelMouseClicked
+        // TODO add your handling code here:
+                algoAlgo('Q');
+
+    }//GEN-LAST:event_QLabelMouseClicked
+
+    private void RLabelMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_RLabelMouseClicked
+        // TODO add your handling code here:
+                algoAlgo('R');
+
+    }//GEN-LAST:event_RLabelMouseClicked
+
+    private void SLabelMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_SLabelMouseClicked
+        // TODO add your handling code here:
+                algoAlgo('S');
+
+    }//GEN-LAST:event_SLabelMouseClicked
+
+    private void TLabelMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_TLabelMouseClicked
+        // TODO add your handling code here:
+                algoAlgo('T');
+
+    }//GEN-LAST:event_TLabelMouseClicked
+
+    private void ULabelMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_ULabelMouseClicked
+        // TODO add your handling code here:
+                algoAlgo('U');
+
+    }//GEN-LAST:event_ULabelMouseClicked
+
+    private void VLabelMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_VLabelMouseClicked
+        // TODO add your handling code here:
+                algoAlgo('V');
+
+    }//GEN-LAST:event_VLabelMouseClicked
+
+    private void WLabelMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_WLabelMouseClicked
+        // TODO add your handling code here:
+                algoAlgo('W');
+
+    }//GEN-LAST:event_WLabelMouseClicked
+
+    private void XLabelMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_XLabelMouseClicked
+        // TODO add your handling code here:
+                algoAlgo('X');
+
+    }//GEN-LAST:event_XLabelMouseClicked
+
+    private void YLabelMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_YLabelMouseClicked
+        // TODO add your handling code here:
+                algoAlgo('Y');
+
+    }//GEN-LAST:event_YLabelMouseClicked
+
+    private void ZLabelMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_ZLabelMouseClicked
+        // TODO add your handling code here:
+                algoAlgo('Z');
+
+    }//GEN-LAST:event_ZLabelMouseClicked
+
+    private void DLabelMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_DLabelMouseClicked
+        // TODO add your handling code here:
+        algoAlgo('D');
+    }//GEN-LAST:event_DLabelMouseClicked
+    
     public void showArea() {
         char b;
         StringBuilder a= new StringBuilder();
@@ -212,7 +819,44 @@ public final class Juego extends javax.swing.JDialog {
         System.out.println(this.palabra.palabra);
     }  
     
-    private void algoAlgo()
+    private void algoAlgo(char a)
+    {
+        boolean gano=true;
+        
+        if(LogicaJuego.jugada(this.palabra, a))
+        {   
+            
+            
+            this.showArea();
+            for (boolean statu : this.palabra.status) {
+                if(statu!=true){
+                    gano=false;
+                }
+            }
+            if(gano==true){
+            JOptionPane.showMessageDialog(this,"GANOO");
+            dispose();
+            }
+            //  Seleccionada.remove(Seleccionada.getSelectedIndex());
+
+        }else{
+            
+            //   Seleccionada.remove(Seleccionada.getSelectedIndex());
+            this.showArea();
+            
+            if(this.palabra.fallos.length()>=5){
+                
+                JOptionPane.showMessageDialog(this,"Perdio");
+                dispose();
+            
+            }
+        }
+    }
+    
+    
+    
+    
+    /*private void algoAlgo()
     {
         boolean gano=true;
         System.out.println(Seleccionada.getSelectedIndex());
@@ -246,7 +890,7 @@ public final class Juego extends javax.swing.JDialog {
         }
     }
     
-    
+    */
     
     
     
@@ -294,13 +938,38 @@ public final class Juego extends javax.swing.JDialog {
     }
     
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JComboBox<String> Seleccionada;
-    private javax.swing.JTextPane areaPalabra;
-    private javax.swing.JButton jButton1;
+    private javax.swing.JLabel ALabel;
+    private javax.swing.JLabel BLabel;
+    private javax.swing.JLabel CLabel;
+    private javax.swing.JLabel DLabel;
+    private javax.swing.JLabel ELabel;
+    private javax.swing.JLabel FLabel;
+    private javax.swing.JLabel GLabel;
+    private javax.swing.JLabel HLabel;
+    private javax.swing.JLabel ILabel;
+    private javax.swing.JLabel JLabel;
+    private javax.swing.JLabel KLabel;
+    private javax.swing.JLabel LLabel;
+    private javax.swing.JLabel MLabel;
+    private javax.swing.JLabel NLabel;
+    private javax.swing.JLabel OLabel;
+    private javax.swing.JLabel PLabel;
+    private javax.swing.JLabel QLabel;
+    private javax.swing.JLabel RLabel;
+    private javax.swing.JLabel SLabel;
+    private javax.swing.JLabel TLabel;
+    private javax.swing.JLabel ULabel;
+    private javax.swing.JLabel VLabel;
+    private javax.swing.JLabel WLabel;
+    private javax.swing.JLabel XLabel;
+    private javax.swing.JLabel YLabel;
+    private javax.swing.JLabel ZLabel;
+    private javax.swing.JTextArea areaPalabra;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JPanel jPanel1;
-    private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane2;
+    private javax.swing.JScrollPane jScrollPane3;
     private javax.swing.JTextArea letrasError;
+    private javax.swing.JLabel ÑLabel;
     // End of variables declaration//GEN-END:variables
 }
