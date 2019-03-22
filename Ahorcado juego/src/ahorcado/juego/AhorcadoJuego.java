@@ -41,7 +41,7 @@ public class AhorcadoJuego {
       
        
        
-       Menu.main(args);
+       new Menu();
        
        
        

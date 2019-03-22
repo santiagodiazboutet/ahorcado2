@@ -5,6 +5,9 @@
  */
 package ahorcado.juego;
 
+import java.awt.event.FocusListener;
+import javax.swing.ImageIcon;
+
 /**
  *
  * @author S
@@ -18,6 +21,8 @@ public class Menu extends javax.swing.JFrame {
      */
     public Menu() {
         initComponents();
+        this.setLocationRelativeTo(null);
+        this.setVisible(true);
     }
 
     /**
@@ -34,13 +39,16 @@ public class Menu extends javax.swing.JFrame {
         jMenuItem1 = new javax.swing.JMenuItem();
         jMenuItem2 = new javax.swing.JMenuItem();
         jMenuItem3 = new javax.swing.JMenuItem();
+        jScrollPane1 = new javax.swing.JScrollPane();
+        jTextArea1 = new javax.swing.JTextArea();
         jPanel1 = new javax.swing.JPanel();
-        dificultadFacil = new javax.swing.JRadioButton();
-        dificultadMedia = new javax.swing.JRadioButton();
-        dificultadDificil = new javax.swing.JRadioButton();
         Comenzar = new javax.swing.JButton();
         jLabel1 = new javax.swing.JLabel();
         Config = new javax.swing.JButton();
+        BtnMedio = new javax.swing.JToggleButton();
+        BtnFacil = new javax.swing.JToggleButton();
+        BtnDificil = new javax.swing.JToggleButton();
+        jLabel2 = new javax.swing.JLabel();
 
         jInternalFrame1.setVisible(true);
 
@@ -61,96 +69,176 @@ public class Menu extends javax.swing.JFrame {
 
         jMenuItem3.setText("jMenuItem3");
 
+        jTextArea1.setColumns(20);
+        jTextArea1.setRows(5);
+        jScrollPane1.setViewportView(jTextArea1);
+
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setBackground(new java.awt.Color(0, 0, 0));
         setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         setForeground(java.awt.Color.black);
+        setResizable(false);
+        addWindowFocusListener(new java.awt.event.WindowFocusListener() {
+            public void windowGainedFocus(java.awt.event.WindowEvent evt) {
+                formWindowGainedFocus(evt);
+            }
+            public void windowLostFocus(java.awt.event.WindowEvent evt) {
+            }
+        });
 
-        jPanel1.setBackground(new java.awt.Color(204, 204, 204));
+        jPanel1.setBackground(new java.awt.Color(153, 204, 204));
 
-        dificultadFacil.setBackground(new java.awt.Color(204, 204, 204));
-        buttonGroup1.add(dificultadFacil);
-        dificultadFacil.setText("Facil");
-
-        dificultadMedia.setBackground(new java.awt.Color(204, 204, 204));
-        buttonGroup1.add(dificultadMedia);
-        dificultadMedia.setSelected(true);
-        dificultadMedia.setText("Normal");
-        dificultadMedia.setToolTipText("");
-
-        dificultadDificil.setBackground(new java.awt.Color(204, 204, 204));
-        buttonGroup1.add(dificultadDificil);
-        dificultadDificil.setText("Dificil");
-
-        Comenzar.setText("Comenzar");
+        Comenzar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/ahorcado/juego/Recursos/boton_jugar.png"))); // NOI18N
+        Comenzar.setBorder(null);
+        Comenzar.setBorderPainted(false);
+        Comenzar.setContentAreaFilled(false);
+        Comenzar.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
+        Comenzar.setFocusPainted(false);
+        Comenzar.setRequestFocusEnabled(false);
+        Comenzar.setRolloverEnabled(true);
+        Comenzar.setRolloverIcon(new javax.swing.ImageIcon(getClass().getResource("/ahorcado/juego/Recursos/boton_jugar_hover.png"))); // NOI18N
+        Comenzar.setVerifyInputWhenFocusTarget(false);
         Comenzar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 ComenzarActionPerformed(evt);
             }
         });
 
-        jLabel1.setText("Bienvenido al ahorcado, seleccione una dificultad y haga click a empezar");
+        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/ahorcado/juego/Recursos/titulo_ahorcado.png"))); // NOI18N
 
-        Config.setText("Administrar palabras");
+        Config.setIcon(new javax.swing.ImageIcon(getClass().getResource("/ahorcado/juego/Recursos/boton_configuración.png"))); // NOI18N
+        Config.setBorder(null);
+        Config.setBorderPainted(false);
+        Config.setContentAreaFilled(false);
+        Config.setDefaultCapable(false);
+        Config.setFocusPainted(false);
+        Config.setFocusable(false);
+        Config.setRequestFocusEnabled(false);
+        Config.setRolloverIcon(new javax.swing.ImageIcon(getClass().getResource("/ahorcado/juego/Recursos/boton_configuración_hover.png"))); // NOI18N
+        Config.setVerifyInputWhenFocusTarget(false);
         Config.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 ConfigActionPerformed(evt);
             }
         });
 
+        BtnMedio.setBackground(new java.awt.Color(153, 204, 204));
+        buttonGroup1.add(BtnMedio);
+        BtnMedio.setIcon(new javax.swing.ImageIcon(getClass().getResource("/ahorcado/juego/Recursos/boton_medio_PEQUEÑO.png"))); // NOI18N
+        BtnMedio.setSelected(true);
+        BtnMedio.setBorder(null);
+        BtnMedio.setBorderPainted(false);
+        BtnMedio.setContentAreaFilled(false);
+        BtnMedio.setFocusPainted(false);
+        BtnMedio.setRequestFocusEnabled(false);
+        BtnMedio.setRolloverIcon(new javax.swing.ImageIcon(getClass().getResource("/ahorcado/juego/Recursos/boton_medio_hover_PEQUEÑO.png"))); // NOI18N
+        BtnMedio.setSelectedIcon(new javax.swing.ImageIcon(getClass().getResource("/ahorcado/juego/Recursos/boton_medio_seleccionado_PEQUEÑO.png"))); // NOI18N
+        BtnMedio.setVerifyInputWhenFocusTarget(false);
+        BtnMedio.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                BtnMedioMouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                BtnMedioMouseExited(evt);
+            }
+        });
+        BtnMedio.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                BtnMedioActionPerformed(evt);
+            }
+        });
+
+        buttonGroup1.add(BtnFacil);
+        BtnFacil.setIcon(new javax.swing.ImageIcon(getClass().getResource("/ahorcado/juego/Recursos/boton_facil_PEQUEÑO.png"))); // NOI18N
+        BtnFacil.setBorderPainted(false);
+        BtnFacil.setContentAreaFilled(false);
+        BtnFacil.setFocusPainted(false);
+        BtnFacil.setFocusable(false);
+        BtnFacil.setRequestFocusEnabled(false);
+        BtnFacil.setRolloverIcon(new javax.swing.ImageIcon(getClass().getResource("/ahorcado/juego/Recursos/boton_facil_hover_PEQUEÑO.png"))); // NOI18N
+        BtnFacil.setSelectedIcon(new javax.swing.ImageIcon(getClass().getResource("/ahorcado/juego/Recursos/boton_facil_seleccionado_PEQUEÑO.png"))); // NOI18N
+        BtnFacil.setVerifyInputWhenFocusTarget(false);
+        BtnFacil.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                BtnFacilActionPerformed(evt);
+            }
+        });
+
+        BtnDificil.setBackground(new java.awt.Color(153, 204, 204));
+        buttonGroup1.add(BtnDificil);
+        BtnDificil.setIcon(new javax.swing.ImageIcon(getClass().getResource("/ahorcado/juego/Recursos/boton_dificil_PEQUEÑO.png"))); // NOI18N
+        BtnDificil.setBorderPainted(false);
+        BtnDificil.setContentAreaFilled(false);
+        BtnDificil.setFocusPainted(false);
+        BtnDificil.setRequestFocusEnabled(false);
+        BtnDificil.setRolloverIcon(new javax.swing.ImageIcon(getClass().getResource("/ahorcado/juego/Recursos/boton_dificil_hover_PEQUEÑO.png"))); // NOI18N
+        BtnDificil.setSelectedIcon(new javax.swing.ImageIcon(getClass().getResource("/ahorcado/juego/Recursos/boton_dificil_seleccionado_PEQUEÑO.png"))); // NOI18N
+        BtnDificil.setVerifyInputWhenFocusTarget(false);
+        BtnDificil.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                BtnDificilActionPerformed(evt);
+            }
+        });
+
+        jLabel2.setFont(new java.awt.Font("Lucida Console", 1, 20)); // NOI18N
+        jLabel2.setForeground(new java.awt.Color(225, 225, 225));
+        jLabel2.setText("Elije la dificultad:");
+
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                .addContainerGap()
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(dificultadMedia)
-                    .addComponent(dificultadFacil)
-                    .addComponent(dificultadDificil)
-                    .addComponent(Config, javax.swing.GroupLayout.PREFERRED_SIZE, 154, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanel1Layout.createSequentialGroup()
+                        .addGap(35, 35, 35)
+                        .addComponent(jLabel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(BtnFacil, javax.swing.GroupLayout.PREFERRED_SIZE, 132, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(BtnMedio)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(BtnDificil, javax.swing.GroupLayout.PREFERRED_SIZE, 131, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(0, 0, Short.MAX_VALUE)
-                        .addComponent(Comenzar))
-                    .addComponent(jLabel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                .addGap(24, 24, 24))
+                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addGroup(jPanel1Layout.createSequentialGroup()
+                                .addComponent(Config)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(Comenzar)
+                                .addGap(85, 85, 85))
+                            .addGroup(jPanel1Layout.createSequentialGroup()
+                                .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 653, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(13, 13, 13)))))
+                .addGap(45, 45, 45))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 67, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(44, 44, 44)
-                        .addComponent(Comenzar)
-                        .addGap(35, 35, 35))
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addComponent(dificultadFacil)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(dificultadMedia)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(dificultadDificil)
-                        .addGap(18, 18, 18)
-                        .addComponent(Config)
-                        .addGap(28, 28, 28))))
+            .addGroup(jPanel1Layout.createSequentialGroup()
+                .addGap(32, 32, 32)
+                .addComponent(jLabel1)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(BtnMedio, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(BtnDificil, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(BtnFacil, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addGap(26, 26, 26)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(Comenzar)
+                    .addComponent(Config))
+                .addContainerGap(50, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 0, Short.MAX_VALUE))
+            .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addGap(0, 0, Short.MAX_VALUE)
-                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+            .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
         );
 
         pack();
@@ -158,33 +246,33 @@ public class Menu extends javax.swing.JFrame {
 
     private void ComenzarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ComenzarActionPerformed
         // TODO add your handling code here:
-        
-       if(dificultadFacil.isSelected()==true)
+      
+       if(BtnMedio.isSelected()==true)
        {
-          this.juego = new Juego(this, true,"Facil");
+          this.juego = new Juego("Normal",this);
           this.juego.getPalabra();
           this.juego.showArea();
           this.setVisible(false);
-          this.juego.setVisible(true);
-          this.setVisible(true);
-       }else if(dificultadMedia.isSelected()==true)
+          this.juego.setVisible(true);    
+     
+         
+       }else if(BtnDificil.isSelected()==true)
        {
-          this.juego = new Juego(this, true,"Normal");
+          this.juego = new Juego("Dificil",this);
           this.juego.getPalabra();
           this.juego.showArea();
-          this.setVisible(false);
-          this.juego.setVisible(true);
-          this.setVisible(true);
+         this.setVisible(false);
+          this.juego.setVisible(true);    
+   
        }
        else
        {
-          this.juego = new Juego(this, true,"Dificil");
+          this.juego = new Juego("Facil",this);
           this.juego.getPalabra();
           this.juego.showArea();
-          this.setVisible(false);
-          this.juego.setVisible(true);
-          this.setVisible(true);
-          
+         this.setVisible(false);
+          this.juego.setVisible(true);    
+  
        }
        
        
@@ -198,6 +286,46 @@ public class Menu extends javax.swing.JFrame {
         ventana.setVisible(true);
     
     }//GEN-LAST:event_ConfigActionPerformed
+
+    private void BtnMedioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BtnMedioActionPerformed
+        // TODO add your handling code here:
+     
+     
+        BtnFacil.setSelected(false);
+        BtnDificil.setSelected(false);
+
+    }//GEN-LAST:event_BtnMedioActionPerformed
+
+    private void BtnFacilActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BtnFacilActionPerformed
+        // TODO add your handling code here:
+     
+        BtnMedio.setSelected(false);
+        BtnDificil.setSelected(false);
+     
+    }//GEN-LAST:event_BtnFacilActionPerformed
+
+    private void BtnDificilActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BtnDificilActionPerformed
+        // TODO add your handling code here:
+       
+        BtnFacil.setSelected(false);
+        BtnMedio.setSelected(false);
+ 
+        
+    }//GEN-LAST:event_BtnDificilActionPerformed
+
+    private void BtnMedioMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_BtnMedioMouseEntered
+        // TODO add your handling code here:
+        
+    }//GEN-LAST:event_BtnMedioMouseEntered
+
+    private void BtnMedioMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_BtnMedioMouseExited
+        // TODO add your handling code here:
+    }//GEN-LAST:event_BtnMedioMouseExited
+
+    private void formWindowGainedFocus(java.awt.event.WindowEvent evt) {//GEN-FIRST:event_formWindowGainedFocus
+        // TODO add your handling code here:
+     
+    }//GEN-LAST:event_formWindowGainedFocus
 
     /**
      * @param args the command line arguments
@@ -230,22 +358,26 @@ public class Menu extends javax.swing.JFrame {
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
                 new Menu().setVisible(true);
+           
             }
         });
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JToggleButton BtnDificil;
+    private javax.swing.JToggleButton BtnFacil;
+    private javax.swing.JToggleButton BtnMedio;
     private javax.swing.JButton Comenzar;
     private javax.swing.JButton Config;
     private javax.swing.ButtonGroup buttonGroup1;
-    private javax.swing.JRadioButton dificultadDificil;
-    private javax.swing.JRadioButton dificultadFacil;
-    private javax.swing.JRadioButton dificultadMedia;
     private javax.swing.JInternalFrame jInternalFrame1;
     private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel2;
     private javax.swing.JMenuItem jMenuItem1;
     private javax.swing.JMenuItem jMenuItem2;
     private javax.swing.JMenuItem jMenuItem3;
     private javax.swing.JPanel jPanel1;
+    private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JTextArea jTextArea1;
     // End of variables declaration//GEN-END:variables
 }

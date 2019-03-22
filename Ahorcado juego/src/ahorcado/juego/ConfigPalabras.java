@@ -25,6 +25,8 @@ public class ConfigPalabras extends javax.swing.JFrame {
     public ConfigPalabras(Menu menu) {
         this.menu=menu;
         initComponents();
+        this.setLocationRelativeTo(null);
+        
     }
 
     /**
@@ -38,9 +40,6 @@ public class ConfigPalabras extends javax.swing.JFrame {
 
         grupoDificultad = new javax.swing.ButtonGroup();
         jPanel1 = new javax.swing.JPanel();
-        dificultadFacil = new javax.swing.JRadioButton();
-        dificultadMedio = new javax.swing.JRadioButton();
-        dificultadDificil = new javax.swing.JRadioButton();
         jScrollPane1 = new javax.swing.JScrollPane();
         jTextArea1 = new javax.swing.JTextArea();
         Borrar = new javax.swing.JButton();
@@ -48,10 +47,14 @@ public class ConfigPalabras extends javax.swing.JFrame {
         Agregar = new javax.swing.JButton();
         jScrollPane2 = new javax.swing.JScrollPane();
         listaPalabras = new javax.swing.JList<>();
-        cargarLista = new javax.swing.JButton();
         guardar = new javax.swing.JButton();
+        dificultadFacil = new javax.swing.JToggleButton();
+        dificultadMedio = new javax.swing.JToggleButton();
+        dificultadDificil = new javax.swing.JToggleButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
+        setLocation(new java.awt.Point(180, 180));
+        setResizable(false);
         addWindowFocusListener(new java.awt.event.WindowFocusListener() {
             public void windowGainedFocus(java.awt.event.WindowEvent evt) {
                 formWindowGainedFocus(evt);
@@ -65,57 +68,143 @@ public class ConfigPalabras extends javax.swing.JFrame {
             }
         });
 
-        jPanel1.setBackground(new java.awt.Color(204, 204, 204));
+        jPanel1.setBackground(new java.awt.Color(153, 204, 204));
 
-        grupoDificultad.add(dificultadFacil);
-        dificultadFacil.setText("Facil");
+        jScrollPane1.setBorder(null);
+        jScrollPane1.setHorizontalScrollBarPolicy(javax.swing.ScrollPaneConstants.HORIZONTAL_SCROLLBAR_NEVER);
+        jScrollPane1.setVerticalScrollBarPolicy(javax.swing.ScrollPaneConstants.VERTICAL_SCROLLBAR_NEVER);
+        jScrollPane1.setHorizontalScrollBar(null);
 
-        grupoDificultad.add(dificultadMedio);
-        dificultadMedio.setSelected(true);
-        dificultadMedio.setText("Normal");
-
-        grupoDificultad.add(dificultadDificil);
-        dificultadDificil.setText("Dificil");
-
+        jTextArea1.setEditable(false);
+        jTextArea1.setBackground(new java.awt.Color(153, 204, 204));
         jTextArea1.setColumns(20);
-        jTextArea1.setRows(5);
-        jTextArea1.setText("Seleccione la dificultad de las palabras que desee administrar y presione \"Cargar lista\"");
+        jTextArea1.setFont(new java.awt.Font("Lucida Console", 1, 20)); // NOI18N
+        jTextArea1.setForeground(new java.awt.Color(51, 51, 51));
+        jTextArea1.setRows(1);
+        jTextArea1.setText("Administre las palabras de cada lista seleccionando la dificultad.");
+        jTextArea1.setBorder(null);
+        jTextArea1.setSelectedTextColor(new java.awt.Color(51, 51, 51));
+        jTextArea1.setSelectionColor(new java.awt.Color(153, 204, 204));
         jScrollPane1.setViewportView(jTextArea1);
 
-        Borrar.setText("Borrar");
+        Borrar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/ahorcado/juego/Recursos/boton_eliminar.png"))); // NOI18N
+        Borrar.setBorder(null);
+        Borrar.setBorderPainted(false);
+        Borrar.setContentAreaFilled(false);
+        Borrar.setRequestFocusEnabled(false);
+        Borrar.setRolloverEnabled(true);
+        Borrar.setRolloverIcon(new javax.swing.ImageIcon(getClass().getResource("/ahorcado/juego/Recursos/boton_eliminar_hover.png"))); // NOI18N
         Borrar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 BorrarActionPerformed(evt);
             }
         });
 
-        Modificar.setText("Modificar");
+        Modificar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/ahorcado/juego/Recursos/boton_modificar.png"))); // NOI18N
+        Modificar.setBorder(null);
+        Modificar.setBorderPainted(false);
+        Modificar.setContentAreaFilled(false);
+        Modificar.setDefaultCapable(false);
+        Modificar.setFocusPainted(false);
+        Modificar.setFocusable(false);
+        Modificar.setRolloverEnabled(true);
+        Modificar.setRolloverIcon(new javax.swing.ImageIcon(getClass().getResource("/ahorcado/juego/Recursos/boton_modificar_hover.png"))); // NOI18N
         Modificar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 ModificarActionPerformed(evt);
             }
         });
 
-        Agregar.setText("Agregar");
+        Agregar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/ahorcado/juego/Recursos/boton_agregar.png"))); // NOI18N
+        Agregar.setBorder(null);
+        Agregar.setBorderPainted(false);
+        Agregar.setContentAreaFilled(false);
+        Agregar.setDefaultCapable(false);
+        Agregar.setFocusPainted(false);
+        Agregar.setFocusable(false);
+        Agregar.setRequestFocusEnabled(false);
+        Agregar.setRolloverEnabled(true);
+        Agregar.setRolloverIcon(new javax.swing.ImageIcon(getClass().getResource("/ahorcado/juego/Recursos/boton_agregar_hover.png"))); // NOI18N
         Agregar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 AgregarActionPerformed(evt);
             }
         });
 
+        jScrollPane2.setBorder(null);
+
+        listaPalabras.setBackground(new java.awt.Color(225, 225, 225));
+        listaPalabras.setFont(new java.awt.Font("Lucida Console", 1, 12)); // NOI18N
+        listaPalabras.setForeground(new java.awt.Color(51, 51, 51));
         jScrollPane2.setViewportView(listaPalabras);
 
-        cargarLista.setText("Cargar lista seleccionada");
-        cargarLista.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                cargarListaActionPerformed(evt);
-            }
-        });
-
-        guardar.setText("Guardar cambios");
+        guardar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/ahorcado/juego/Recursos/boton_guardar cambios.png"))); // NOI18N
+        guardar.setBorder(null);
+        guardar.setBorderPainted(false);
+        guardar.setContentAreaFilled(false);
+        guardar.setDefaultCapable(false);
+        guardar.setFocusPainted(false);
+        guardar.setFocusable(false);
+        guardar.setRequestFocusEnabled(false);
+        guardar.setRolloverEnabled(true);
+        guardar.setRolloverIcon(new javax.swing.ImageIcon(getClass().getResource("/ahorcado/juego/Recursos/boton_guardar cambios_hover.png"))); // NOI18N
+        guardar.setVerifyInputWhenFocusTarget(false);
         guardar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 guardarActionPerformed(evt);
+            }
+        });
+
+        grupoDificultad.add(dificultadFacil);
+        dificultadFacil.setIcon(new javax.swing.ImageIcon(getClass().getResource("/ahorcado/juego/Recursos/boton_facil.png"))); // NOI18N
+        dificultadFacil.setBorder(null);
+        dificultadFacil.setBorderPainted(false);
+        dificultadFacil.setContentAreaFilled(false);
+        dificultadFacil.setFocusPainted(false);
+        dificultadFacil.setFocusable(false);
+        dificultadFacil.setRequestFocusEnabled(false);
+        dificultadFacil.setRolloverEnabled(true);
+        dificultadFacil.setRolloverIcon(new javax.swing.ImageIcon(getClass().getResource("/ahorcado/juego/Recursos/boton_facil_hover.png"))); // NOI18N
+        dificultadFacil.setSelectedIcon(new javax.swing.ImageIcon(getClass().getResource("/ahorcado/juego/Recursos/boton_facil_seleccionado.png"))); // NOI18N
+        dificultadFacil.setVerifyInputWhenFocusTarget(false);
+        dificultadFacil.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                dificultadFacilActionPerformed(evt);
+            }
+        });
+
+        grupoDificultad.add(dificultadMedio);
+        dificultadMedio.setIcon(new javax.swing.ImageIcon(getClass().getResource("/ahorcado/juego/Recursos/boton_medio.png"))); // NOI18N
+        dificultadMedio.setBorder(null);
+        dificultadMedio.setBorderPainted(false);
+        dificultadMedio.setContentAreaFilled(false);
+        dificultadMedio.setFocusPainted(false);
+        dificultadMedio.setFocusable(false);
+        dificultadMedio.setRequestFocusEnabled(false);
+        dificultadMedio.setRolloverIcon(new javax.swing.ImageIcon(getClass().getResource("/ahorcado/juego/Recursos/boton_medio_hover.png"))); // NOI18N
+        dificultadMedio.setSelectedIcon(new javax.swing.ImageIcon(getClass().getResource("/ahorcado/juego/Recursos/boton_medio_seleccionado.png"))); // NOI18N
+        dificultadMedio.setVerifyInputWhenFocusTarget(false);
+        dificultadMedio.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                dificultadMedioActionPerformed(evt);
+            }
+        });
+
+        grupoDificultad.add(dificultadDificil);
+        dificultadDificil.setIcon(new javax.swing.ImageIcon(getClass().getResource("/ahorcado/juego/Recursos/boton_dificil.png"))); // NOI18N
+        dificultadDificil.setBorder(null);
+        dificultadDificil.setBorderPainted(false);
+        dificultadDificil.setContentAreaFilled(false);
+        dificultadDificil.setFocusPainted(false);
+        dificultadDificil.setFocusable(false);
+        dificultadDificil.setRequestFocusEnabled(false);
+        dificultadDificil.setRolloverEnabled(true);
+        dificultadDificil.setRolloverIcon(new javax.swing.ImageIcon(getClass().getResource("/ahorcado/juego/Recursos/boton_dificil_hover.png"))); // NOI18N
+        dificultadDificil.setSelectedIcon(new javax.swing.ImageIcon(getClass().getResource("/ahorcado/juego/Recursos/boton_dificil_seleccionado.png"))); // NOI18N
+        dificultadDificil.setVerifyInputWhenFocusTarget(false);
+        dificultadDificil.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                dificultadDificilActionPerformed(evt);
             }
         });
 
@@ -124,61 +213,55 @@ public class ConfigPalabras extends javax.swing.JFrame {
         jPanel1Layout.setHorizontalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGap(31, 31, 31)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addGap(70, 70, 70)
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(dificultadDificil)
-                            .addComponent(dificultadMedio)
-                            .addComponent(cargarLista)
-                            .addComponent(guardar, javax.swing.GroupLayout.PREFERRED_SIZE, 175, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 242, Short.MAX_VALUE)
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                                .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 234, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(108, 108, 108))
-                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                                .addComponent(Borrar)
-                                .addGap(75, 75, 75)
-                                .addComponent(Modificar)
-                                .addGap(57, 57, 57)
-                                .addComponent(Agregar)
-                                .addGap(49, 49, 49))))
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jScrollPane1)
                             .addGroup(jPanel1Layout.createSequentialGroup()
-                                .addComponent(dificultadFacil)
-                                .addGap(0, 0, Short.MAX_VALUE)))
-                        .addContainerGap())))
+                                .addGap(100, 100, 100)
+                                .addComponent(Agregar)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(Modificar)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(Borrar))
+                            .addGroup(jPanel1Layout.createSequentialGroup()
+                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                                    .addComponent(dificultadMedio)
+                                    .addComponent(dificultadFacil)
+                                    .addComponent(dificultadDificil))
+                                .addGap(70, 70, 70)
+                                .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 367, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addGap(26, 26, 26)
+                        .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 859, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addContainerGap(26, Short.MAX_VALUE))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                .addGap(0, 0, Short.MAX_VALUE)
+                .addComponent(guardar)
+                .addGap(289, 289, 289))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGap(42, 42, 42)
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(33, 33, 33)
-                .addComponent(dificultadFacil)
-                .addGap(18, 18, 18)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGap(26, 26, 26)
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(26, 26, 26)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addComponent(dificultadFacil)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addComponent(dificultadMedio)
-                        .addGap(18, 18, 18)
-                        .addComponent(dificultadDificil)
-                        .addGap(135, 135, 135)
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addGroup(jPanel1Layout.createSequentialGroup()
-                                .addGap(72, 72, 72)
-                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                                    .addComponent(Borrar)
-                                    .addComponent(Modificar)
-                                    .addComponent(Agregar)
-                                    .addComponent(guardar)))
-                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                                .addComponent(cargarLista)
-                                .addGap(93, 93, 93))))
-                    .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 241, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(128, Short.MAX_VALUE))
+                        .addGap(39, 39, 39)
+                        .addComponent(dificultadDificil))
+                    .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 294, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(26, 26, 26)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(Agregar)
+                    .addComponent(Modificar)
+                    .addComponent(Borrar))
+                .addGap(26, 26, 26)
+                .addComponent(guardar)
+                .addContainerGap(26, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -189,87 +272,81 @@ public class ConfigPalabras extends javax.swing.JFrame {
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
-
-    private void cargarListaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cargarListaActionPerformed
-        // TODO add your handling code here:
+    private void cargarLista(){
         this.model=new DefaultListModel<>();
-        if(dificultadFacil.isSelected()==true)
-       {
-           this.dicc=Diccionario.deserializarPalabras("Facil");
-  
-       }else if(dificultadMedio.isSelected()==true)
-       {
-          this.dicc=Diccionario.deserializarPalabras("Normal");
-       }
-       else
-       {
-          this.dicc=Diccionario.deserializarPalabras("Dificil");
-       }
-        
         if(this.dicc!=null){
             
             
             for (Palabra Palabra : this.dicc.Palabras) {
-                    this.model.addElement(Palabra.palabra);
+                    this.model.addElement(Palabra.getPalabra());
             } 
             this.listaPalabras.setModel(model);
             this.listaPalabras.setVisible(true);
-            
+            this.listaPalabras.setSelectedIndex(0);
             
         }
-        
-        
-    }//GEN-LAST:event_cargarListaActionPerformed
-
+    }
+    
+    
+    
+    
     private void BorrarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BorrarActionPerformed
         // TODO add your handling code here:
-        
-        
+        if(this.dificultadDificil.isSelected()||this.dificultadFacil.isSelected()||this.dificultadMedio.isSelected())
+        {
         this.dicc.Palabras.remove(this.listaPalabras.getSelectedIndex());
         for (Palabra Palabra1 : this.dicc.Palabras) {
-            System.out.println(Palabra1.palabra);
+            System.out.println(Palabra1.getPalabra());
         }
         this.model.remove(this.listaPalabras.getSelectedIndex());
+        }
     }//GEN-LAST:event_BorrarActionPerformed
 
     private void ModificarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ModificarActionPerformed
         // TODO add your handling code here:
-        System.out.println(this.dicc.Palabras.get(this.listaPalabras.getSelectedIndex()).palabra);
+        if(this.dificultadDificil.isSelected()||this.dificultadFacil.isSelected()||this.dificultadMedio.isSelected()){
         ModificarPalabra ventana=new ModificarPalabra(this , true, this.dicc.Palabras.get(this.listaPalabras.getSelectedIndex()));
         ventana.setVisible(true);
+        }
       /*  */
         
     }//GEN-LAST:event_ModificarActionPerformed
 
     private void AgregarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_AgregarActionPerformed
         // TODO add your handling code here:
-       
+       if(this.dificultadDificil.isSelected()||this.dificultadFacil.isSelected()||this.dificultadMedio.isSelected()){
         ModificarPalabra ventana=new ModificarPalabra(this , true, this.dicc);
        
         ventana.setVisible(true);
-        
+       }
+       
+       
+       
+       
     }//GEN-LAST:event_AgregarActionPerformed
 
     private void formWindowClosing(java.awt.event.WindowEvent evt) {//GEN-FIRST:event_formWindowClosing
         // TODO add your handling code here:
+        
         this.menu.setVisible(true);
     }//GEN-LAST:event_formWindowClosing
 
     private void formWindowGainedFocus(java.awt.event.WindowEvent evt) {//GEN-FIRST:event_formWindowGainedFocus
         // TODO add your handling code here:
+        int index=this.listaPalabras.getSelectedIndex();
         if(this.dicc!=null){
             
             this.model.removeAllElements();
           
             for (Palabra Palabra : this.dicc.Palabras) {
-                    this.model.addElement(Palabra.palabra);
+                    this.model.addElement(Palabra.getPalabra());
             } 
-            
+            this.listaPalabras.setSelectedIndex(index);
         }
     }//GEN-LAST:event_formWindowGainedFocus
 
@@ -295,6 +372,24 @@ public class ConfigPalabras extends javax.swing.JFrame {
             
     }//GEN-LAST:event_guardarActionPerformed
 
+    private void dificultadFacilActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_dificultadFacilActionPerformed
+        // TODO add your handling code here:
+        this.dicc=Diccionario.deserializarPalabras("Facil");
+        cargarLista();
+    }//GEN-LAST:event_dificultadFacilActionPerformed
+
+    private void dificultadMedioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_dificultadMedioActionPerformed
+        // TODO add your handling code here:
+        this.dicc=Diccionario.deserializarPalabras("Normal");
+        cargarLista();
+    }//GEN-LAST:event_dificultadMedioActionPerformed
+
+    private void dificultadDificilActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_dificultadDificilActionPerformed
+        // TODO add your handling code here:
+        this.dicc=Diccionario.deserializarPalabras("Dificil");
+        cargarLista();
+    }//GEN-LAST:event_dificultadDificilActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -303,10 +398,9 @@ public class ConfigPalabras extends javax.swing.JFrame {
     private javax.swing.JButton Agregar;
     private javax.swing.JButton Borrar;
     private javax.swing.JButton Modificar;
-    private javax.swing.JButton cargarLista;
-    private javax.swing.JRadioButton dificultadDificil;
-    private javax.swing.JRadioButton dificultadFacil;
-    private javax.swing.JRadioButton dificultadMedio;
+    private javax.swing.JToggleButton dificultadDificil;
+    private javax.swing.JToggleButton dificultadFacil;
+    private javax.swing.JToggleButton dificultadMedio;
     private javax.swing.ButtonGroup grupoDificultad;
     private javax.swing.JButton guardar;
     private javax.swing.JPanel jPanel1;

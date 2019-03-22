@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<java version="1.8.0_111" class="java.beans.XMLDecoder">
+<java version="1.8.0_201" class="java.beans.XMLDecoder">
  <object class="ahorcado.juego.Diccionario" id="Diccionario0"/>
 <void class="ahorcado.juego.Diccionario" id="Field0" method="getField">
  <string>Palabras</string>
@@ -11,7 +11,7 @@
      <string>palabra</string>
      <void method="set">
       <object idref="Palabra0"/>
-      <string>Ahoru</string>
+      <string>Ahore</string>
      </void>
     </void>
     <void class="ahorcado.juego.Palabra" method="getField">
@@ -36,7 +36,7 @@
      <string>palabra</string>
      <void method="set">
       <object idref="Palabra1"/>
-      <string>Ahoro</string>
+      <string>Ahora</string>
      </void>
     </void>
     <void class="ahorcado.juego.Palabra" method="getField">
@@ -61,7 +61,7 @@
      <string>palabra</string>
      <void method="set">
       <object idref="Palabra2"/>
-      <string>Ahore</string>
+      <string>Ahori</string>
      </void>
     </void>
     <void class="ahorcado.juego.Palabra" method="getField">
@@ -86,7 +86,7 @@
      <string>palabra</string>
      <void method="set">
       <object idref="Palabra3"/>
-      <string>Ahora</string>
+      <string>Ahoru</string>
      </void>
     </void>
     <void class="ahorcado.juego.Palabra" method="getField">
@@ -111,7 +111,7 @@
      <string>palabra</string>
      <void method="set">
       <object idref="Palabra4"/>
-      <string>Ahori</string>
+      <string>Ahoro</string>
      </void>
     </void>
     <void class="ahorcado.juego.Palabra" method="getField">

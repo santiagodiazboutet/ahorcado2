@@ -20,24 +20,22 @@ public class ModificarPalabra extends javax.swing.JDialog {
     public ModificarPalabra(java.awt.Frame parent, boolean modal) {
         super(parent, modal);
         initComponents();
+        this.setLocationRelativeTo(null);
     }
    public ModificarPalabra(java.awt.Frame parent, boolean modal,Palabra x){
         this(parent,modal);
         if(this.Palabra!=null){
-        this.Palabra.setText(x.palabra);
-        this.Definicion.setText(x.definicion);
+        this.Palabra.setText(x.getPalabra());
+        this.Definicion.setText(x.getDefinicion());
         }else{
-            this.Palabra.setText("Palabra");
-            this.Definicion.setText("Definicion");
         }
         this.pal=x;
    }
    public ModificarPalabra(java.awt.Frame parent, boolean modal,Diccionario x){
         this(parent,modal);
-       
-            this.Palabra.setText("Palabra");
-            this.Definicion.setText("Definicion");
-        
+       this.Palabra.setText("");
+        this.Definicion.setText("");
+           
         this.dicc=x;
    }
     /**
@@ -51,37 +49,70 @@ public class ModificarPalabra extends javax.swing.JDialog {
 
         jPanel1 = new javax.swing.JPanel();
         Palabra = new javax.swing.JFormattedTextField();
-        Definicion = new javax.swing.JFormattedTextField();
         Aceptar = new javax.swing.JButton();
         Cancelar = new javax.swing.JButton();
+        jLabel1 = new javax.swing.JLabel();
+        jLabel2 = new javax.swing.JLabel();
+        Definicion = new javax.swing.JFormattedTextField();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
+        setResizable(false);
 
-        jPanel1.setBackground(new java.awt.Color(204, 204, 204));
+        jPanel1.setBackground(new java.awt.Color(153, 204, 204));
+        jPanel1.setForeground(new java.awt.Color(225, 225, 225));
 
+        Palabra.setBackground(new java.awt.Color(225, 225, 225));
+        Palabra.setBorder(null);
+        Palabra.setForeground(new java.awt.Color(51, 51, 51));
+        Palabra.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        Palabra.setFont(new java.awt.Font("Lucida Console", 1, 14)); // NOI18N
+        Palabra.setMinimumSize(new java.awt.Dimension(1, 16));
+        Palabra.setPreferredSize(new java.awt.Dimension(1, 16));
         Palabra.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 PalabraActionPerformed(evt);
             }
         });
 
-        Definicion.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                DefinicionActionPerformed(evt);
-            }
-        });
-
-        Aceptar.setText("Aceptar");
+        Aceptar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/ahorcado/juego/Recursos/boton_aceptar.png"))); // NOI18N
+        Aceptar.setBorder(null);
+        Aceptar.setRolloverEnabled(true);
+        Aceptar.setRolloverIcon(new javax.swing.ImageIcon(getClass().getResource("/ahorcado/juego/Recursos/boton_aceptar_hover.png"))); // NOI18N
         Aceptar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 AceptarActionPerformed(evt);
             }
         });
 
-        Cancelar.setText("Cancelar");
+        Cancelar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/ahorcado/juego/Recursos/boton_cancelar.png"))); // NOI18N
+        Cancelar.setBorder(null);
+        Cancelar.setBorderPainted(false);
+        Cancelar.setRolloverEnabled(true);
+        Cancelar.setRolloverIcon(new javax.swing.ImageIcon(getClass().getResource("/ahorcado/juego/Recursos/boton_cancelar_hover.png"))); // NOI18N
         Cancelar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 CancelarActionPerformed(evt);
+            }
+        });
+
+        jLabel1.setFont(new java.awt.Font("Lucida Console", 1, 24)); // NOI18N
+        jLabel1.setForeground(new java.awt.Color(51, 51, 51));
+        jLabel1.setText("Palabra");
+
+        jLabel2.setFont(new java.awt.Font("Lucida Console", 1, 24)); // NOI18N
+        jLabel2.setForeground(new java.awt.Color(51, 51, 51));
+        jLabel2.setText("Definicion");
+
+        Definicion.setBackground(new java.awt.Color(225, 225, 225));
+        Definicion.setBorder(null);
+        Definicion.setForeground(new java.awt.Color(51, 51, 51));
+        Definicion.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        Definicion.setFont(new java.awt.Font("Lucida Console", 1, 14)); // NOI18N
+        Definicion.setMinimumSize(new java.awt.Dimension(1, 16));
+        Definicion.setPreferredSize(new java.awt.Dimension(1, 16));
+        Definicion.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                DefinicionActionPerformed(evt);
             }
         });
 
@@ -89,40 +120,46 @@ public class ModificarPalabra extends javax.swing.JDialog {
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGap(36, 36, 36)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(Definicion, javax.swing.GroupLayout.DEFAULT_SIZE, 337, Short.MAX_VALUE)
-                    .addComponent(Palabra))
-                .addContainerGap(392, Short.MAX_VALUE))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(Cancelar)
-                .addGap(30, 30, 30)
-                .addComponent(Aceptar)
-                .addGap(42, 42, 42))
+                .addContainerGap(26, Short.MAX_VALUE)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addComponent(jLabel1)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(jLabel2))
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addComponent(Palabra, javax.swing.GroupLayout.PREFERRED_SIZE, 337, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(Cancelar))
+                        .addGap(18, 18, 18)
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(Aceptar)
+                            .addComponent(Definicion, javax.swing.GroupLayout.PREFERRED_SIZE, 337, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                .addGap(26, 26, 26))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGap(53, 53, 53)
-                .addComponent(Palabra, javax.swing.GroupLayout.PREFERRED_SIZE, 77, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(129, 129, 129)
-                .addComponent(Definicion, javax.swing.GroupLayout.PREFERRED_SIZE, 82, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 57, Short.MAX_VALUE)
+                .addGap(26, 26, 26)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(Aceptar)
-                    .addComponent(Cancelar))
-                .addGap(22, 22, 22))
+                    .addComponent(jLabel1)
+                    .addComponent(jLabel2))
+                .addGap(34, 34, 34)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(Palabra, javax.swing.GroupLayout.PREFERRED_SIZE, 82, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(Definicion, javax.swing.GroupLayout.PREFERRED_SIZE, 82, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(18, 18, 18)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(Cancelar)
+                    .addComponent(Aceptar))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 0, Short.MAX_VALUE))
+            .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -132,9 +169,9 @@ public class ModificarPalabra extends javax.swing.JDialog {
         pack();
     }// </editor-fold>//GEN-END:initComponents
     
-    private void DefinicionActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_DefinicionActionPerformed
+    private void PalabraActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_PalabraActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_DefinicionActionPerformed
+    }//GEN-LAST:event_PalabraActionPerformed
 
     private void CancelarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CancelarActionPerformed
         // TODO add your handling code here:
@@ -144,19 +181,20 @@ public class ModificarPalabra extends javax.swing.JDialog {
     private void AceptarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_AceptarActionPerformed
         // TODO add your handling code here:
         if(this.pal!=null){
-        this.pal.palabra=this.Palabra.getText();
-        this.pal.definicion=this.Definicion.getText();
-        this.pal.status=new boolean[this.pal.palabra.length()];
+        this.pal.setPalabra(this.Palabra.getText());
+        this.pal.setDefinicion(this.Palabra.getText());
+        this.pal.newStatus(new boolean[this.pal.getPalabra().length()]);
         }else{
-            this.pal=new Palabra(this.Palabra.getText(),this.Definicion.getText());
+            
+            this.pal=new Palabra(this.Palabra.getText(),this.Palabra.getText());
             this.dicc.Palabras.add(pal);
         }
         dispose();
     }//GEN-LAST:event_AceptarActionPerformed
 
-    private void PalabraActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_PalabraActionPerformed
+    private void DefinicionActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_DefinicionActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_PalabraActionPerformed
+    }//GEN-LAST:event_DefinicionActionPerformed
 
     /**
      * @param args the command line arguments
@@ -205,6 +243,8 @@ public class ModificarPalabra extends javax.swing.JDialog {
     private javax.swing.JButton Cancelar;
     private javax.swing.JFormattedTextField Definicion;
     private javax.swing.JFormattedTextField Palabra;
+    private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel2;
     private javax.swing.JPanel jPanel1;
     // End of variables declaration//GEN-END:variables
 }

@@ -65,7 +65,7 @@ public class Diccionario {
         }
         
         Diccionario dicc = (Diccionario) decoder.readObject();
-
+        decoder.close();
         return dicc;
     }
 }
